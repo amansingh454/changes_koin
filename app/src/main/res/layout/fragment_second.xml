@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="295dp">
+
+        <TextView
+            android:id="@+id/nametextView"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:background="#956C6C"
+            android:text="@string/movie_name"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/cattextView"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="40dp"
+            android:background="#956C6C"
+            android:text="@string/movie_category"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/desctextView"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginTop="90dp"
+            android:text="@string/movie_description"
+            android:textSize="18sp"
+            android:background="#956C6C"/>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="240dp"
+
+            android:text="@string/details"
+            android:layout_marginStart="150dp" />
+    </RelativeLayout>
+
+
+</layout>
