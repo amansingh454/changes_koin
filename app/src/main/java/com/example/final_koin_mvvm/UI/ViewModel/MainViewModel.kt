@@ -10,7 +10,7 @@ import org.koin.core.component.inject
 
 class MainViewModel(): ViewModel(),KoinComponent {
      private  val mainRepository:MainRepository by inject()
-     lateinit var movieList:MutableLiveData<List<Movie>>
+      lateinit var movieList:MutableLiveData<List<Movie>>
 
      fun getMovies(){
           mainRepository.getAllMovies()
