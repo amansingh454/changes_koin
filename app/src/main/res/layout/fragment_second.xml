@@ -1,46 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <RelativeLayout
+
+    <data>
+        <variable
+            name="detail"
+            type="com.example.final_koin_mvvm.data.data.model.Movie" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="295dp">
+        android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/nametextView"
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:background="#956C6C"
-            android:text="@string/movie_name"
-            android:textSize="20sp" />
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{detail.name}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.169"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.177" />
 
         <TextView
-            android:id="@+id/cattextView"
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="40dp"
-            android:background="#956C6C"
-            android:text="@string/movie_category"
-            android:textSize="18sp" />
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@{detail.cat}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.169"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.319" />
 
         <TextView
-            android:id="@+id/desctextView"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginTop="90dp"
-            android:text="@string/movie_description"
-            android:textSize="18sp"
-            android:background="#956C6C"/>
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{detail.desc}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.169"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.729" />
 
         <Button
-            android:id="@+id/button3"
-            android:layout_width="150dp"
-            android:layout_height="70dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="240dp"
-
-            android:text="@string/details"
-            android:layout_marginStart="150dp" />
-    </RelativeLayout>
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.877"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.935" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </layout>

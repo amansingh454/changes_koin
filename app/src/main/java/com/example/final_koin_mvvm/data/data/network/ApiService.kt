@@ -16,7 +16,7 @@ interface MovieApi {
 
         fun getInstance(): MovieApi {
             if(movieApi ==null){
-                val retrofit=Retrofit.Builder().baseUrl("https://howtodoandroid.com/movielist.json")
+                val retrofit=Retrofit.Builder().baseUrl("https://howtodoandroid.com/movielist.json/")
                         .addConverterFactory(GsonConverterFactory.create())
                         .build()
                 movieApi =retrofit.create(MovieApi::class.java)

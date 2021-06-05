@@ -13,11 +13,10 @@ import retrofit2.Call
 
 class MainRepository(private val api: MovieApi){
 
-    val movieList= MutableLiveData<List<Movie>>()
-    val errorMessage= MutableLiveData<String>()
+    fun getAllMovies():MutableLiveData<List<Movie>>{
 
-
-    fun getAllMovies(){
+        val movieList= MutableLiveData<List<Movie>>()
+        val errorMessage= MutableLiveData<String>()
         val response = api.getAllMovies()
         response.enqueue(object : Callback<List<Movie>> {
             override fun onResponse(call: Call<List<Movie>>, response: Response<List<Movie>>)
@@ -27,6 +26,8 @@ class MainRepository(private val api: MovieApi){
                 errorMessage.value= t.message
             }
         })
+        return movieList
+
 
 
     }

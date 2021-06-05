@@ -1,4 +1,4 @@
-package com.example.project2.UI.MOVIES.Adapter
+package com.example.final_koin_mvvm.UI.Adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -27,9 +27,7 @@ class Adapter(private val movies: List<Movie>):
     class MovieViewHolder(private val singleItemBinding: SingleItemBinding):
             RecyclerView.ViewHolder(singleItemBinding.root){
         fun bindMovie(movie:Movie) {
-            singleItemBinding.name.text=movie.name
-            singleItemBinding.desc.text=movie.desc
-            singleItemBinding.category.text=movie.cat
+            singleItemBinding.movie=movie
 
         }
             }

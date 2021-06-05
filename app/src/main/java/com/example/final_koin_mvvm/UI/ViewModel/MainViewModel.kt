@@ -1,4 +1,5 @@
 package com.example.final_koin_mvvm.UI.ViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.final_koin_mvvm.data.data.model.Movie
@@ -8,13 +9,14 @@ import org.koin.core.Koin
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
-class MainViewModel(): ViewModel(),KoinComponent {
+class MainViewModel: ViewModel(),KoinComponent{
      private  val mainRepository:MainRepository by inject()
-      lateinit var movieList:MutableLiveData<List<Movie>>
+      lateinit var movieList: LiveData<List<Movie>>
 
-     fun getMovies(){
+     fun getMovies():LiveData<List<Movie>>{
           mainRepository.getAllMovies()
-          movieList=mainRepository.movieList
+          movieList= mainRepository.getAllMovies()
+          return movieList
 
      }
 

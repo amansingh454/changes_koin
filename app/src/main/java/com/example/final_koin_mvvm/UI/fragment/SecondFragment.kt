@@ -1,4 +1,4 @@
-package com.example.project2.UI.MOVIES.fragment
+package com.example.final_koin_mvvm.UI.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -37,11 +37,9 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.cattextView.text = user.cat
-        binding.desctextView.text = user.desc
-        binding.nametextView.text = user.name
+        binding.detail=user
 
-        binding.button3.setOnClickListener {
+        binding.button2.setOnClickListener {
             view.findNavController().navigate(R.id.movieFragment)
 
         }
