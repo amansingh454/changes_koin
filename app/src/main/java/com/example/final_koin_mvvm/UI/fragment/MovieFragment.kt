@@ -40,14 +40,14 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         super.onViewCreated(view, savedInstanceState)
         mainViewModel.getMovies()
         val movieList = mainViewModel.movieList
-        movieList.observe(this.viewLifecycleOwner, Observer { binding.RecView.also {
+        movieList.observe(this.viewLifecycleOwner, Observer { movieList-> binding.RecView.also {
 
             it.layoutManager=LinearLayoutManager(requireContext())
-            it.adapter= movieList.value?.let { it1 -> Adapter(it1) }
-        }})
+            it.adapter= Adapter(movies = movieList) }
+        })
             val name=singleItemBinding.name.text.toString()
-            val desc=singleItemBinding.desc.text.toString()
-            val cat=singleItemBinding.category.text.toString()
+            val desc=singleItemBinding.des.text.toString()
+            val cat=singleItemBinding.cat.text.toString()
             val user= Movie(name,desc,cat)
             val bundle= bundleOf("user" to user)
             view.findNavController().navigate(R.id.secondFragment,bundle)     }
