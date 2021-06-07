@@ -10,8 +10,9 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.final_koin_mvvm.R
+import com.example.final_koin_mvvm.UI.Adapter.Adapter
 
-import com.example.project2.UI.MOVIES.Adapter.Adapter
+
 import com.example.final_koin_mvvm.UI.ViewModel.MainViewModel
 import com.example.final_koin_mvvm.data.data.model.Movie
 import com.example.final_koin_mvvm.databinding.FragmentMovieBinding
@@ -43,11 +44,11 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         movieList.observe(this.viewLifecycleOwner, Observer { binding.RecView.also {
 
             it.layoutManager=LinearLayoutManager(requireContext())
-            it.adapter= movieList.value?.let { it1 -> Adapter(it1) }
-        }})
+            it.adapter= Adapter(movieList) }
+        })
             val name=singleItemBinding.name.text.toString()
-            val desc=singleItemBinding.desc.text.toString()
-            val cat=singleItemBinding.category.text.toString()
+            val desc=singleItemBinding.des.text.toString()
+            val cat=singleItemBinding.cat.text.toString()
             val user= Movie(name,desc,cat)
             val bundle= bundleOf("user" to user)
             view.findNavController().navigate(R.id.secondFragment,bundle)     }
@@ -55,6 +56,11 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
 
 
     }
+
+
+
+
+
 
 
 
