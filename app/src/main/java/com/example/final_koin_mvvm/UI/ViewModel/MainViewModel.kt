@@ -9,8 +9,9 @@ import org.koin.core.Koin
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
-class MainViewModel: ViewModel(),KoinComponent{
-     private  val mainRepository:MainRepository by inject()
+class MainViewModel(private val mainRepository: MainRepository): ViewModel(),KoinComponent{
+     
+     //private  val mainRepository:MainRepository by inject()
       lateinit var movieList: LiveData<List<Movie>>
 
      fun getMovies():LiveData<List<Movie>>{
