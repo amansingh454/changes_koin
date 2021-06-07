@@ -14,7 +14,6 @@ class MainViewModel: ViewModel(),KoinComponent{
       lateinit var movieList: LiveData<List<Movie>>
 
      fun getMovies():LiveData<List<Movie>>{
-          mainRepository.getAllMovies()
           movieList= mainRepository.getAllMovies()
           return movieList
 
