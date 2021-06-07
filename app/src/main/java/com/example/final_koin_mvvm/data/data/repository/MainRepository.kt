@@ -1,9 +1,7 @@
 package com.example.project2.data.repository
 
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.final_koin_mvvm.UI.ViewModel.MainViewModel
 import com.example.final_koin_mvvm.data.data.model.Movie
 import com.example.final_koin_mvvm.data.data.network.MovieApi
 import retrofit2.Callback

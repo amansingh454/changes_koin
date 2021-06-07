@@ -34,11 +34,9 @@ class SecondFragment : Fragment(R.layout.fragment_second) {
         return binding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.detail=user
-
         binding.button2.setOnClickListener {
             view.findNavController().navigate(R.id.movieFragment)
 
