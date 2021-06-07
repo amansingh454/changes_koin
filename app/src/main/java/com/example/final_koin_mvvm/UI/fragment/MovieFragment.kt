@@ -44,8 +44,8 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         movieList.observe(this.viewLifecycleOwner, Observer { binding.RecView.also {
 
             it.layoutManager=LinearLayoutManager(requireContext())
-            it.adapter= Adapter(movieList) }
-        })
+            it.adapter= movieList.value?.let { it1 -> Adapter(movies = it1) }
+        }})
             val name=singleItemBinding.name.text.toString()
             val desc=singleItemBinding.des.text.toString()
             val cat=singleItemBinding.cat.text.toString()
